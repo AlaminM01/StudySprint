@@ -1,8 +1,11 @@
 {
   "name": "studysprint",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "StudySprint - Modern Student Productivity & Focus Platform",
+  "homepage": "https://study-sprint-zeta.vercel.app/",
   "type": "module",
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",

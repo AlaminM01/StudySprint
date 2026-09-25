@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { RotateCcw, Download, Code2 } from 'lucide-react';
+import { RotateCcw, Download, Code2, Globe } from 'lucide-react';
+
 
 import { ThemeProvider } from './context/ThemeContext';
 import { StudySprintProvider, useStudySprint } from './context/StudySprintContext';
@@ -217,6 +218,17 @@ function MainApplication() {
           </button>
 
           <a
+            href="https://study-sprint-zeta.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-colors font-medium"
+            title="Open Live Vercel Deployment"
+          >
+            <Globe className="w-3.5 h-3.5" />
+            <span>Live Platform</span>
+          </a>
+
+          <a
             href="https://github.com/AlaminM01/StudySprint"
             target="_blank"
             rel="noreferrer"
@@ -225,6 +237,7 @@ function MainApplication() {
             <Code2 className="w-3.5 h-3.5" />
             <span>GitHub</span>
           </a>
+
 
         </div>
       </footer>

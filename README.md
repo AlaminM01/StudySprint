@@ -23,9 +23,13 @@
 [![Web Audio API](https://img.shields.io/badge/Web_Audio_API-Synthesized-8B5CF6?style=for-the-badge&logo=soundcharts&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
 [![License: MIT](https://img.shields.io/badge/License-MIT-amber.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-[🚀 Live Demo](https://alaminm01.github.io/StudySprint/) • [📖 Documentation](#table-of-contents) • [✨ Feature Tour](#-core-features) • [🛠️ Architecture](#-project-architecture)
+### 🌐 Live Production Deployment
+### 👉 [StudySprint — Modern Student Productivity & Focus Platform](https://study-sprint-zeta.vercel.app/)
+
+[🚀 Launch Live App](https://study-sprint-zeta.vercel.app/) • [📖 Documentation](#table-of-contents) • [✨ Feature Tour](#-core-features) • [🛠️ Architecture](#-project-architecture)
 
 </div>
+
 
 ---
 
@@ -212,7 +216,12 @@ StudySprint/
 
 ## 🚀 Quick Start & Installation
 
+### 🌐 Try the Live Deployment
+Access and test the fully deployed web application directly in your browser:
+👉 **[StudySprint — Modern Student Productivity & Focus Platform](https://study-sprint-zeta.vercel.app/)**
+
 ### Prerequisites
+
 - [Node.js](https://nodejs.org/) (v18.0.0 or higher recommended)
 - `npm` or `pnpm` / `yarn`
 
