@@ -29,7 +29,7 @@ export const MobileNav = ({
   return (
     <>
       {/* Mobile Bottom Navigation Bar */}
-      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-30 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-slate-200/80 dark:border-slate-800/80 px-2 py-1.5 flex items-center justify-around">
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-30 bg-white/85 dark:bg-slate-900/85 backdrop-blur-2xl border-t border-slate-200/80 dark:border-slate-800/80 px-2 py-2 pb-safe flex items-center justify-around shadow-2xl">
         {bottomItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;
@@ -37,23 +37,23 @@ export const MobileNav = ({
             <button
               key={item.id}
               onClick={() => onTabChange(item.id)}
-              className={`flex flex-col items-center justify-center py-1.5 px-3 rounded-xl transition-all relative ${
+              className={`flex flex-col items-center justify-center py-1 px-3 rounded-2xl transition-all relative active:scale-95 touch-manipulation cursor-pointer ${
                 isActive
-                  ? 'text-indigo-600 dark:text-indigo-400 font-semibold'
+                  ? 'text-indigo-600 dark:text-indigo-400 font-bold'
                   : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
               }`}
             >
               <div className="relative">
-                <Icon className={`w-5 h-5 ${isActive ? 'scale-110' : ''} transition-transform`} />
+                <Icon className={`w-5 h-5 ${isActive ? 'scale-115 text-indigo-600 dark:text-indigo-400' : ''} transition-transform`} />
                 {item.badge && typeof item.badge === 'number' && item.badge > 0 && (
-                  <span className="absolute -top-1.5 -right-2 px-1 text-[9px] font-bold rounded-full bg-indigo-600 text-white min-w-3.5 text-center">
+                  <span className="absolute -top-1.5 -right-2.5 px-1.5 text-[9px] font-bold rounded-full bg-indigo-600 text-white min-w-4 text-center shadow-sm">
                     {item.badge}
                   </span>
                 )}
               </div>
-              <span className="text-[10px] mt-0.5">{item.label}</span>
+              <span className="text-[10px] mt-1 font-medium">{item.label}</span>
               {isActive && (
-                <span className="absolute bottom-0 w-8 h-0.5 bg-indigo-600 dark:bg-indigo-400 rounded-full" />
+                <span className="absolute -bottom-1 w-6 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full" />
               )}
             </button>
           );
