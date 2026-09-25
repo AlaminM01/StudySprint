@@ -1,4 +1,4 @@
-import { BADGES } from './badges';
+import { BADGES } from './badges.js';
 
 export const INITIAL_TIMER_SETTINGS = {
   workDuration: 25, // minutes

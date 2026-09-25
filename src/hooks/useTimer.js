@@ -49,27 +49,7 @@ export const useTimer = ({ onSessionComplete } = {}) => {
     }
   }, [settings]);
 
-  // Main countdown tick
-  useEffect(() => {
-    if (isRunning) {
-      timerRef.current = setInterval(() => {
-        setTimeLeft((prev) => {
-          if (prev <= 1) {
-            clearInterval(timerRef.current);
-            handleTimerComplete();
-            return 0;
-          }
-          return prev - 1;
-        });
-      }, 1000);
-    } else {
-      clearInterval(timerRef.current);
-    }
-
-    return () => clearInterval(timerRef.current);
-  }, [isRunning, mode, settings, completedSessions, activeTask]);
-
-  const handleTimerComplete = () => {
+  const handleTimerComplete = useCallback(() => {
     setIsRunning(false);
 
     const completedSessionData = {
@@ -104,7 +84,36 @@ export const useTimer = ({ onSessionComplete } = {}) => {
         setIsRunning(true);
       }
     }
-  };
+  }, [
+    mode,
+    totalTime,
+    activeTask,
+    onSessionComplete,
+    completedSessions,
+    settings,
+    getDurationForMode,
+  ]);
+
+  // Main countdown tick
+  useEffect(() => {
+    if (isRunning) {
+      timerRef.current = setInterval(() => {
+        setTimeLeft((prev) => {
+          if (prev <= 1) {
+            clearInterval(timerRef.current);
+            handleTimerComplete();
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    } else {
+      clearInterval(timerRef.current);
+    }
+
+    return () => clearInterval(timerRef.current);
+  }, [isRunning, handleTimerComplete]);
+
 
   const start = () => setIsRunning(true);
   const pause = () => setIsRunning(false);

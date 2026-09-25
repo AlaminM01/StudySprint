@@ -1,6 +1,7 @@
 import React from 'react';
-import { Search, Filter, X, ArrowUpDown, Calendar, CheckSquare, Clock } from 'lucide-react';
+import { Search, X, ArrowUpDown } from 'lucide-react';
 import { SUBJECTS, PRIORITIES } from '../../data/subjects';
+
 
 export const TaskFilters = ({
   searchQuery,

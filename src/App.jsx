@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { RotateCcw, Download, Code2 } from 'lucide-react';
+
 import { ThemeProvider } from './context/ThemeContext';
 import { StudySprintProvider, useStudySprint } from './context/StudySprintContext';
 import AppLayout from './components/layout/AppLayout';
@@ -12,7 +14,7 @@ import QuotesView from './components/quotes/QuotesView';
 import TaskModal from './components/tasks/TaskModal';
 import AnimatedPage from './components/common/AnimatedPage';
 import useTimer from './hooks/useTimer';
-import { triggerConfetti, triggerMilestoneCelebration } from './utils/confetti';
+import { triggerConfetti } from './utils/confetti';
 import { MOTIVATIONAL_QUOTES } from './data/quotes';
 
 function MainApplication() {
@@ -43,6 +45,7 @@ function MainApplication() {
     exportData,
     toggleSoundMute,
   } = useStudySprint();
+
 
   // Timer hook integration
   const timer = useTimer({
@@ -188,6 +191,44 @@ function MainApplication() {
         )}
       </AnimatePresence>
 
+      {/* Application Footer with Data Management */}
+      <footer className="mt-12 pt-6 border-t border-slate-200/60 dark:border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+        <div className="flex items-center gap-2">
+          <span>StudySprint • Built for High Performance Students</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <button
+            onClick={resetToDemoData}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors"
+            title="Reload initial rich sample data"
+          >
+            <RotateCcw className="w-3.5 h-3.5" />
+            <span>Reset Demo Data</span>
+          </button>
+
+          <button
+            onClick={exportData}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors"
+            title="Download JSON backup"
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span>Backup Data</span>
+          </button>
+
+          <a
+            href="https://github.com/AlaminM01/StudySprint"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-500/20 transition-colors font-medium"
+          >
+            <Code2 className="w-3.5 h-3.5" />
+            <span>GitHub</span>
+          </a>
+
+        </div>
+      </footer>
+
       {/* Global Task Modal */}
       <TaskModal
         isOpen={isTaskModalOpen}
@@ -197,6 +238,7 @@ function MainApplication() {
     </AppLayout>
   );
 }
+
 
 export default function App() {
   return (

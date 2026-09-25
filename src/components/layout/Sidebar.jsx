@@ -8,8 +8,8 @@ import {
   Sparkles,
   Zap,
   GraduationCap,
-  ExternalLink,
 } from 'lucide-react';
+
 
 export const Sidebar = ({
   activeTab,

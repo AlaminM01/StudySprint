@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card from '../common/Card';
 import MotivationalQuoteCard from './MotivationalQuoteCard';
 import { MOTIVATIONAL_QUOTES } from '../../data/quotes';
-import { Sparkles, Quote, Copy, Check, Heart, Search } from 'lucide-react';
+import { Copy, Check, Heart, Search } from 'lucide-react';
 
 export const QuotesView = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -26,8 +26,11 @@ export const QuotesView = () => {
     setFavorites(nextFavorites);
     try {
       localStorage.setItem('studysprint_favorite_quotes', JSON.stringify(nextFavorites));
-    } catch (e) {}
+    } catch {
+      // ignore
+    }
   };
+
 
   const handleCopy = (q) => {
     navigator.clipboard.writeText(`"${q.quote}" — ${q.author}`);

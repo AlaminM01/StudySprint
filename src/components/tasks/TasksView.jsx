@@ -114,8 +114,6 @@ export const TasksView = ({
     setSortBy('dueDateAsc');
   };
 
-  const pendingCount = tasks.filter((t) => !t.completed).length;
-  const completedCount = tasks.filter((t) => t.completed).length;
 
   return (
     <div className="space-y-6">

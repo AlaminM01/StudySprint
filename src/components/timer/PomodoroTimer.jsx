@@ -5,18 +5,14 @@ import {
   RotateCcw,
   SkipForward,
   Settings,
-  Flame,
-  CheckCircle2,
   BookOpen,
-  Volume2,
-  Sparkles,
   ChevronDown,
 } from 'lucide-react';
 import Card from '../common/Card';
 import Button from '../common/Button';
 import TimerSettingsModal from './TimerSettingsModal';
 import { formatSecondsToMMSS } from '../../utils/formatters';
-import { SUBJECTS } from '../../data/subjects';
+
 
 export const PomodoroTimer = ({
   mode = 'work',

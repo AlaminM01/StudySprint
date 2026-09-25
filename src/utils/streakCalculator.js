@@ -1,4 +1,4 @@
-import { BADGES } from '../data/badges';
+import { BADGES } from '../data/badges.js';
 
 export const calculateStreak = (dailyLogs = []) => {
   if (!dailyLogs || dailyLogs.length === 0) {

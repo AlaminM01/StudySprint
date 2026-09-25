@@ -1,6 +1,7 @@
 import React from 'react';
-import { Sparkles, Play, Plus, BookOpen, Flame, ArrowUpRight } from 'lucide-react';
+import { Sparkles, Play, Plus } from 'lucide-react';
 import StatsOverview from './StatsOverview';
+
 import QuickFocusCard from './QuickFocusCard';
 import TodayTasksCard from './TodayTasksCard';
 import DailyStreakCard from './DailyStreakCard';

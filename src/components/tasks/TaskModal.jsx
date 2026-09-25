@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Modal } from '../common/Modal';
 import Button from '../common/Button';
 import { SUBJECTS, PRIORITIES } from '../../data/subjects';
-import { Clock, Calendar, Tag, AlertTriangle } from 'lucide-react';
+import { AlertTriangle } from 'lucide-react';
+
 
 export const TaskModal = ({
   isOpen,

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Flame, Trophy, Calendar, Award, Zap, Star } from 'lucide-react';
-import Card from '../common/Card';
+import { Flame, Star } from 'lucide-react';
 import StreakCalendar from './StreakCalendar';
+
 import BadgesGrid from './BadgesGrid';
 import { formatMinutesToHours } from '../../utils/formatters';
 

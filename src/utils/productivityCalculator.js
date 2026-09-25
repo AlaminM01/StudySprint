@@ -1,4 +1,4 @@
-import { SUBJECTS } from '../data/subjects';
+import { SUBJECTS } from '../data/subjects.js';
 
 export const calculateProductivityScore = ({
   todayFocusMinutes = 0,

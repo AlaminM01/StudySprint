@@ -4,13 +4,13 @@ import {
   Circle,
   Clock,
   Calendar,
-  MoreVertical,
   Play,
   Pencil,
   Trash2,
   AlertCircle,
   FileText,
 } from 'lucide-react';
+
 import { SUBJECTS, PRIORITIES } from '../../data/subjects';
 import Button from '../common/Button';
 
